@@ -11,7 +11,7 @@ const TabIcon = ({ icon, color, name, focused}) => {
             tintColor={color}
             className="w-6 h-6"
             />
-                <Text >
+                <Text style= {{color: color}} >
                     {name}
                 </Text>
         </View>
@@ -24,6 +24,14 @@ const TabsLayout = () => {
     <Tabs
     screenOptions={{
         tabBarShowLabel: false,
+        tabBarActiveTintColor: "white", 
+        tabBarInactiveTintColor: "gray",
+        tabBarStyle: {
+            backgroundColor: "black",
+            borderTopWidth: 1,
+            borderTopColor: "gray",
+            height: 84,
+        }
     }
     }
     >
