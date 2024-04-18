@@ -5,6 +5,7 @@ import { images } from '../../constants'
 import FormField from '../../components/FormField'
 import  CustomButton from '../../components/CustomButton'
 import { Link } from 'expo-router'
+import {createUser} from '../../lib/appwrite'
 
 
 const SignUp = () => {
@@ -15,7 +16,7 @@ const SignUp = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState (false)
   const submit = () =>{
-
+      createUser();
   }
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -27,7 +28,7 @@ const SignUp = () => {
             className="w-[115px] h-[35px]"
           />
           <Text className='text-2xl text-white text-semibold mt-10 font-psemibold'>
-            Sign Upto Artsy
+            Sign Up to Artsy
           </Text>
           <FormField
             title="Username"
@@ -49,7 +50,7 @@ const SignUp = () => {
             otherStyles="mt-7"
           />
           <CustomButton 
-            title="Sign Up"
+            title="Sign In"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
